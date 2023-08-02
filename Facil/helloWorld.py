@@ -3,6 +3,7 @@ La función print()
 se utiliza para imprimir un mensaje o un objeto en la salida estándar, que generalmente es la pantalla.
 """
 
-print("Hola mundo!")
+def hello():
+    return 'Hello, World!'
 
-print("Este es otro mensaje")
+print(hello())
