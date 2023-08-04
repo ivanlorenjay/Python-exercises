@@ -23,5 +23,18 @@ dura = int(input("Duración del evento (minutos): "))
 
 # Escribe tu código aquí.
 
+nHours = (dura // 60)
+nmins = dura % 60
 
+hour += nHours
+mins += nmins
+
+if( mins > 59 ):
+    hour += mins // 60
+    print(hour)
+    mins %= 60
+    if( hour >= 24 ):
+        hour -= 24
+
+print(f"{hour}:{mins}")
 
