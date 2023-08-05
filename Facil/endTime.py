@@ -20,21 +20,8 @@ Por ejemplo, si el evento comienza a las 12:17 y dura 59 minutos, terminará a l
 hour = int(input("Hora de inicio (horas): "))
 mins = int(input("Minuto de inicio (minutos): "))
 dura = int(input("Duración del evento (minutos): "))
-
-# Escribe tu código aquí.
-
-nHours = (dura // 60)
-nmins = dura % 60
-
-hour += nHours
-mins += nmins
-
-if( mins > 59 ):
-    hour += mins // 60
-    print(hour)
-    mins %= 60
-    if( hour >= 24 ):
-        hour -= 24
-
-print(f"{hour}:{mins}")
-
+mins = mins + dura # encuentra el número total de minutos
+hour = hour + mins // 60 # encuentra el número de horas ocultas en los minutos y actualiza las horas
+mins = mins % 60 # corrige los minutos para que estén en un rango de (0..59)
+hour = hour % 24 # corrige las horas para que estén en un rango de (0..23) 
+print(hour, ":", mins, sep='')
